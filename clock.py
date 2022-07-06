@@ -9,8 +9,8 @@ seconds = (now - midnight).seconds
 
 # Calculate hours, minutes and seconds
 crhour = str(int(seconds / 4320) + 1)
-crmins = str(int((seconds - int(crhour) * 4320) / 216))
-crsecs = str(int(seconds - int(crhour) * 4320 - int(crmins) * 216))
+crmins = str(int((seconds - (int(crhour) - 1) * 4320) / 216))
+crsecs = str(int(seconds - (int(crhour) - 1) * 4320 - (int(crmins) - 1) * 216))
 
 # Add 0 so 1:1:1 -> 01:01:001
 crhour = '0' * (2 - len(crhour)) + crhour
